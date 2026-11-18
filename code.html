@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="cs"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plzeňka - Restaurace a Pension</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#414844",
+                        "outline-variant": "#c1c8c2",
+                        "inverse-surface": "#303030",
+                        "surface-container-low": "#f6f3f2",
+                        "secondary-fixed": "#ffdcbd",
+                        "surface-tint": "#3f6653",
+                        "warm-wood": "#A67C52",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#7a532a",
+                        "primary-container": "#1b4332",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "tertiary-fixed": "#e8e2cf",
+                        "surface": "#fcf9f8",
+                        "tertiary": "#29261a",
+                        "paper-white": "#FAFAF9",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#aba694",
+                        "on-secondary-fixed": "#2c1600",
+                        "pilsner-green": "#083121",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "on-background": "#1b1c1c",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container-high": "#eae7e7",
+                        "secondary": "#7d562d",
+                        "on-surface": "#1b1c1c",
+                        "surface-variant": "#e5e2e1",
+                        "outline": "#717973",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#f0bd8b",
+                        "on-secondary-fixed-variant": "#623f18",
+                        "on-tertiary-fixed-variant": "#4a4738",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#c1ecd4",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container": "#f0eded",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-container": "#86af99",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1e1c10",
+                        "tertiary-fixed-dim": "#ccc6b3",
+                        "tertiary-container": "#3f3c2e",
+                        "primary": "#012d1d",
+                        "on-primary-fixed": "#002114",
+                        "inverse-primary": "#a5d0b9",
+                        "secondary-container": "#ffca98",
+                        "surface-dim": "#dcd9d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["EB Garamond"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "headline-md": ["EB Garamond"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #FAFAF9;
+            color: #1b1c1c;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-paper-white selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Header Navigation -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-paper-white/80 dark:bg-pilsner-green/80 shadow-sm transition-all duration-300" id="top-nav">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-20">
+<div class="flex items-center gap-4">
+<a class="font-display-lg text-headline-md text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity flex items-center gap-3" href="#">
+<img alt="Logo" class="h-12 w-12 object-contain rounded-full" src="https://lh3.googleusercontent.com/aida/AP1WRLuuvYdcTw61deYISPRclJXQ6wte_7imD_V3UYxIPSp73_AAdXCx7IzScH2yjSQyelsT652WOWDhqxySSQ4ExZgz-6f3WRtSWacyUmR8A0SMcarKXMsW2oCUuOBq1XXnFgU-TuZd9IwQYL8cXR-IFSlDCtoGWdpue4hW0SgT5UhKONOVa7tOzwq1V9ABsMNDYh6vd6DJPuqH8zo-Dlj5nBwuiHgRs2mRN4a5q9gBWb7ger-G9lXKzDVReEk"/>
+<span class="hidden md:inline">Plzeňka</span>
+</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#menu">Menu</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#ubytovani">Pension</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#kontakt">Kontakt</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider hover:opacity-90 transition-all active:scale-95 shadow-sm">
+                    Rezervace
+                </button>
+</div>
+<div class="md:hidden flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="menu">menu</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Exteriér Pensionu Plzeňka" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtxYwT1UsmChvTN0H2Kr-JTUWCJriodEjXRB3GLsGP9vpsjD6aSRdgd34rhrak9g89xKCo-STTLscRZIJAbE3rGIPK-azf3XR1sakjYWlercgNuV6fnYU2MqcrDpyz5BFUWStiRMvWR1OuIicwIUfxDeNFpyO20Nef1P7sjTXsa7PMlZkREd5U4kYhpu2jEbgA_Qvwofj6fBfxgOd_p-GllU2hGetbGGfMkfW_JJv_tUFjxfRcHkm3h79bH"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
+<div class="max-w-2xl text-on-primary">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest mb-6">Tradiční české pohostinství</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Vítejte v Restauraci a Pensionu Plzeňka</h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90 max-w-lg">Kde se snoubí moderní gastronomie s úctou k historii a rodinnou atmosférou Veselého domu.</p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-warm-wood text-on-primary px-8 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary transition-all flex items-center gap-2 shadow-lg" href="#burgery">
+                        Naše Burgery <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</a>
+<a class="border border-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-white/10 transition-all" href="#kontakt">
+                        Kde nás najdete
+                    </a>
+</div>
+</div>
+</div>
+</header>
+<!-- Daily Menu Highlight -->
+<section class="py-section-gap bg-surface-container-lowest overflow-hidden" id="menu">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="font-display-lg text-headline-md mb-6 text-primary">Poctivá česká kuchyně</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Každý den pro vás připravujeme čerstvé "Menu dne" plné tradičních chutí. Od klasické svíčkové až po naše vyhlášené speciality.
+                    </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-warm-wood" data-icon="schedule">schedule</span>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-secondary">Otevírací doba</h4>
+<p class="text-on-surface-variant">Po-Út: 10:00 - 15:00 | St-Pá: 10:00 - 21:00+</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-warm-wood" data-icon="local_dining">local_dining</span>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-secondary">Vždy čerstvé</h4>
+<p class="text-on-surface-variant">Suroviny vybíráme od prověřených lokálních dodavatelů.</p>
+</div>
+</div>
+</div>
+<button class="border-2 border-primary text-primary px-8 py-3 rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                        Zobrazit dnešní menu
+                    </button>
+</div>
+<div class="order-1 lg:order-2">
+<div class="relative group">
+<div class="relative z-10 rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-white p-4 transition-transform duration-500 hover:-rotate-1">
+<img alt="Dnešní Menu" class="w-full h-auto object-contain max-h-[600px]" src="https://lh3.googleusercontent.com/aida/AP1WRLuQwlIqtsz_9guPfzXCMFIrgbPJ3vQnOh2BTOoDigKR_oXWfVn4zvxxoYRXQbt4KmyaNqHBx8zlhYRvmuQdPyMy-eZK9fz_wS_VZzJYpTzYP8RDs-AQjC3dA43izFjJsHE1ES6hw_V2ZsSHBh_JrdfwPLvFGw1LM41qrKsKxkuYPSDYt9tFKi3dIe7omdvXqMxqIs-6TyKhXnz_C0jDXGX2-s9cUdOKpJwJwk4xkEwzVMm3NbBnonfbGBoO"/>
+</div>
+<div class="absolute -bottom-6 -left-6 w-48 h-48 bg-secondary-fixed/30 rounded-full blur-3xl -z-10"></div>
+<div class="absolute -top-6 -right-6 w-48 h-48 bg-primary-fixed/30 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Burger Speciality Bento -->
+<section class="py-section-gap bg-paper-white relative" id="burgery">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary block mb-2">Gastronomický zážitek</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-pilsner-green mb-4">Vyhlášené Burgery z Plzeňky</h2>
+<p class="max-w-xl mx-auto text-on-surface-variant font-body-md">Středa až sobota od 14:00 hodin připravujeme ty nejšťavnatější hovězí burgery v okolí.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Featured Burger Image Card -->
+<div class="md:col-span-7 group relative overflow-hidden rounded-xl bg-surface-container shadow-lg aspect-square md:aspect-auto md:h-[600px] border border-outline-variant/30">
+<img alt="Plzeňské Burgery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvef4Gru0fCSp5o-jJcKfvztuRjCKoVndOKUovV787OMiIRt88-mmwOKo6y9MUNiP-Llmd29a_c-5orQJe0vUt84VobOW2E_AO4TpEfqPp6UYBjjs8fUp0Nt62X9l9ETmGxGJ3KLZUrv50An0SgazvPJ8BIIOW9eZ5zX30k8r1j8fMXBP-gNRIKLbwc0BsCCC83d9FGBirX4dAFjTvgoWzA0O5n9Cwn-l0LGVQLX1BYvpBFcmr2fteg71DM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="relative z-10 p-8 h-full flex flex-col justify-end text-white">
+<span class="font-label-sm text-label-sm uppercase bg-warm-wood w-fit px-3 py-1 mb-4 shadow-md">Náš Bestseller</span>
+<h3 class="font-headline-md text-headline-md mb-2">Pravý domácí burger</h3>
+<p class="font-body-md opacity-90 mb-6 max-w-md">Naše vyhlášené burgery připravujeme z čerstvého hovězího masa a v domácích bulkách přímo u nás v Plzeňce.</p>
+<div class="flex items-center gap-4">
+<span class="font-headline-sm text-headline-sm">od 249 Kč</span>
+<span class="h-px flex-grow bg-white/30"></span>
+</div>
+</div>
+</div>
+<!-- Burger Info Grid -->
+<div class="md:col-span-5 flex flex-col gap-gutter">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-sm text-primary">Plzeňský Burger</h4>
+<span class="font-label-sm text-secondary font-bold">279 Kč</span>
+</div>
+<p class="text-on-surface-variant font-body-md leading-relaxed">180g mleté hovězí, anglická slanina, cheddar, cibulka, rajče, volské oko a naše tajná BBQ omáčka.</p>
+</div>
+<div class="mt-6 flex items-center text-primary text-sm gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span> Vlajková loď restaurace
+                        </div>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between hover:shadow-md transition-shadow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline-sm text-primary">Extra Cheese</h4>
+<span class="font-label-sm text-secondary font-bold">279 Kč</span>
+</div>
+<p class="text-on-surface-variant font-body-md leading-relaxed">Tři druhy sýrů (modrý, cheddar, camembert), rajče, cibulka a domácí majonézová omáčka.</p>
+</div>
+<div class="mt-6 flex items-center text-primary text-sm gap-2">
+<span class="material-symbols-outlined" data-icon="restaurant">restaurant</span> Pro milovníky sýra
+                        </div>
+</div>
+<div class="bg-primary-container text-on-primary-container p-8 rounded-xl shadow-lg flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-4xl mb-4" data-icon="phone_in_talk">phone_in_talk</span>
+<h4 class="font-headline-sm mb-2">Máte hlad?</h4>
+<p class="font-body-md opacity-80 mb-4">Objednávky do 20:00</p>
+<a class="font-headline-sm hover:underline" href="tel:+420606270920">+420 606 270 920</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About / Veselý Dům -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2">
+<div class="relative">
+<!-- Historical/Authentic Building Image (IMAGE_21) -->
+<div class="relative z-10">
+<img alt="Veselý Dům - Exteriér" class="rounded-xl shadow-2xl border-4 border-white object-cover w-full aspect-[4/3]" src="https://lh3.googleusercontent.com/aida/AP1WRLtxYwT1UsmChvTN0H2Kr-JTUWCJriodEjXRB3GLsGP9vpsjD6aSRdgd34rhrak9g89xKCo-STTLscRZIJAbE3rGIPK-azf3XR1sakjYWlercgNuV6fnYU2MqcrDpyz5BFUWStiRMvWR1OuIicwIUfxDeNFpyO20Nef1P7sjTXsa7PMlZkREd5U4kYhpu2jEbgA_Qvwofj6fBfxgOd_p-GllU2hGetbGGfMkfW_JJv_tUFjxfRcHkm3h79bH"/>
+<div class="absolute top-6 left-6 bg-black/60 backdrop-blur-md text-white px-4 py-2 rounded font-label-sm text-xs uppercase tracking-widest shadow-lg">
+                                Legendární "Veselý dům"
+                            </div>
+</div>
+<!-- Floating Logo branding -->
+<div class="absolute -bottom-10 -right-10 w-48 hidden md:block z-20">
+<div class="p-3 bg-white rounded-xl shadow-2xl border border-outline-variant/20">
+<img alt="Plzeňka Logo" class="rounded-lg w-full h-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLsiVIlPiQc4qP_RRVE68PgXvUSVAFGu-xD9FqaUvJBUawgN_pn6vueEjQazNsyf3mezbH-t7sUGxCUch27ZtFbKBG2e6DjCY4xk7qOw7yL77PRZQ7q6wT9Ize0KTNq2dEtJCt4LogTdI0TN8geUwfvoU6L5M8cg0q5rl76x9D4sg4NbH7WMEW_b9Klq0abDQZfFt_k1AlUdmmwhRtpRf7jIAgzq9-HJ06q3gBOzIS10K_Rm5ZGv1_YONah9"/>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4 block">Náš příběh</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg-mobile text-pilsner-green mb-6 leading-tight">Filmová tradice v srdci Týna</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                        Věděli jste to? Naše Plzeňka není jen o burgerech a pivu, ale je to i slavný <strong>"Veselý dům"</strong> z filmu Kameňák! Filmová atmosféra a pohoda tu zůstala dodnes.
+                    </p>
+<p class="font-body-md text-on-surface-variant mb-8 opacity-80 leading-relaxed">
+                        O kvalitu ubytování pečuje paní <strong>Nikola Sabová</strong>, zatímco o poctivou domácí kuchyni se stará pan <strong>Jaroslav Sabo</strong>. Společně s naším týmem tvoříme rodinný podnik, kde na tradici a lidskosti opravdu záleží.
+                    </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm">
+<h4 class="font-display-lg text-headline-sm text-primary">20+</h4>
+<p class="text-sm text-on-surface-variant opacity-70">Let zkušeností</p>
+</div>
+<div class="bg-white p-6 rounded-lg border border-outline-variant/30 shadow-sm">
+<h4 class="font-display-lg text-headline-sm text-primary">100%</h4>
+<p class="text-sm text-on-surface-variant opacity-70">Domácí výroba</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pension / Ubytování CTA -->
+<section class="py-section-gap relative overflow-hidden group" id="ubytovani">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary opacity-95"></div>
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px]"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center text-white">
+<h2 class="font-display-lg text-headline-md mb-6">Pohodlné ubytování v srdci Týna</h2>
+<p class="font-body-lg mb-12 opacity-80 max-w-2xl mx-auto leading-relaxed">Hledáte klidné místo pro váš odpočinek? Náš pension nabízí útulné pokoje se vším potřebným komfortem a rodinným přístupem v historické budově "Veselého domu".</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-12">
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-4 text-primary-fixed" data-icon="call">call</span>
+<span class="font-label-sm text-sm uppercase opacity-60 mb-2">Rezervace pokojů</span>
+<a class="font-headline-sm text-headline-sm hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="tel:+420722902090">+420 722 902 090</a>
+</div>
+<div class="w-px h-16 bg-white/20 hidden md:block"></div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl mb-4 text-primary-fixed" data-icon="mail">mail</span>
+<span class="font-label-sm text-sm uppercase opacity-60 mb-2">Napište nám</span>
+<a class="font-headline-sm text-headline-sm hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="mailto:plzenka-sabovi@seznam.cz">plzenka-sabovi@seznam.cz</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Map -->
+<section class="py-section-gap" id="kontakt">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<div class="lg:col-span-4">
+<h2 class="font-headline-md text-headline-md text-primary mb-8">Kontaktujte nás</h2>
+<div class="space-y-8">
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-secondary mb-2">Adresa</h4>
+<p class="text-on-surface-variant font-body-lg">Vltavská 11, 375 01 Týn nad Vltavou</p>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-secondary mb-2">Restaurace Objednávky</h4>
+<a class="text-primary text-2xl font-bold hover:underline transition-all" href="tel:+420606270920">+420 606 270 920</a>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-secondary mb-2">Sledujte nás</h4>
+<div class="flex gap-4 mt-3">
+<a class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 rounded-xl overflow-hidden shadow-xl border border-outline-variant/30 min-h-[450px]">
+<!-- Interactive Map Placeholder -->
+<div class="w-full h-full bg-surface-container relative">
+<img alt="Mapa Týn nad Vltavou" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-location="Týn nad Vltavou" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfESdXF7zeW-GYuXs3ceMYuKcibAFcNa45mDMEn8l_n6MeJeHMN4QbGAserJ5Y_59lnlCqKhG5x5qua5vQDQPG_yQHRW0IYmx2xm2Eh2pWzXq5Mgl4dLXSRr5PAhsBTkvM0Cb95p6Shg1VUV7zN_vXHVD8xYUwDsnh2J9zay7iSBWhO3jof96qGUXYz-T_HFVw__MQDTY0Y64Cg_REtoG_M7HkQQnXCGK09weU1ZyOBq5dfPihQhznDFbldWTE7Af783ewXgx30tai"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<a class="bg-white/95 backdrop-blur px-8 py-4 rounded-lg shadow-2xl flex items-center gap-3 text-primary font-bold hover:bg-white transition-all transform hover:scale-105" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined" data-icon="map">map</span> Otevřít v mapách
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant py-16">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between gap-16 mb-16">
+<div class="max-w-xs">
+<a class="font-display-lg text-headline-sm text-pilsner-green dark:text-primary-fixed mb-6 block" href="#">Plzeňka</a>
+<p class="text-on-surface-variant text-sm opacity-80 leading-relaxed">
+                        Poctivé české pohostinství s dlouholetou tradicí. Zakládáme si na kvalitě surovin a spokojenosti každého hosta ve "Veselém domě".
+                    </p>
+</div>
+<div class="grid grid-cols-2 gap-12 md:gap-24">
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-primary mb-6">Navigace</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li><a class="hover:text-warm-wood transition-colors" href="#">Domů</a></li>
+<li><a class="hover:text-warm-wood transition-colors" href="#burgery">Menu &amp; Burgery</a></li>
+<li><a class="hover:text-warm-wood transition-colors" href="#ubytovani">Ubytování</a></li>
+<li><a class="hover:text-warm-wood transition-colors" href="#kontakt">Kontakt</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm uppercase text-primary mb-6">Právní informace</h4>
+<ul class="space-y-3 text-sm text-on-surface-variant">
+<li><a class="hover:text-warm-wood transition-colors" href="#">GDPR</a></li>
+<li><a class="hover:text-warm-wood transition-colors" href="#">Cookies</a></li>
+<li><a class="hover:text-warm-wood transition-colors" href="#">Zásady ochrany údajů</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-on-surface-variant text-xs opacity-60">© 2025 Restaurace Pension Plzeňka. Všechna práva vyhrazena.</p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="text-xs text-on-surface-variant opacity-60">Jazyk:</span>
+<button class="text-xs font-bold text-primary">CZ</button>
+<span class="text-xs opacity-20">|</span>
+<button class="text-xs opacity-60 hover:opacity-100 transition-opacity">EN</button>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Floating Order Button for Mobile -->
+<div class="fixed bottom-8 right-8 md:hidden z-40">
+<a class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl animate-pulse ring-4 ring-white/20" href="tel:+420606270920">
+<span class="material-symbols-outlined text-3xl" data-icon="phone" style="font-variation-settings: 'FILL' 1;">phone</span>
+</a>
+</div>
+<script>
+        // Scroll reveal effect for nav
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('top-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-1', 'bg-paper-white/98', 'shadow-md');
+                nav.classList.remove('bg-paper-white/80');
+            } else {
+                nav.classList.remove('py-1', 'bg-paper-white/98', 'shadow-md');
+                nav.classList.add('bg-paper-white/80');
+            }
+        });
+    </script>
+</body></html>
